@@ -1,0 +1,808 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My TV Home</title>
+    
+
+    <style>
+      
+
+*{
+        box-sizing: border-box;
+
+            border:none ;
+            margin: none;
+        padding: 0px;
+    }
+    body {
+        font-family: Arial, sans-serif;
+
+        background: url("https://images.pexels.com/photos/11814657/pexels-photo-11814657.jpeg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+
+        margin: 0px;
+
+        width:100%;
+
+
+
+    }
+    .name 
+    {
+        width: 100%;
+        margin-left: 30px;
+        display: flex;
+        margin-top:15px;
+        font-size: 40px;
+    }
+    .peak
+    {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .peak p
+    {
+        width: 100px;
+        margin: 0%;
+
+        color: white;
+
+    }
+    .cinema
+    {
+        width: 130px;
+        color: #591160;
+
+    }
+     .com
+    {
+        text-align: center;
+        margin-bottom: 10px;
+         width: 100px;
+        margin: 0%;
+
+        color: white;
+    }
+
+     .home
+     {
+         color: white;
+         margin-right: 20px;
+         margin-top: 10px;
+     }
+.search-bar
+{
+    margin-top: 10px;
+    margin-right: 20px;
+    display: flex;
+    
+}
+.search-bar:focus button{
+    background-color: white;
+    color: black;
+}
+  
+
+    .header{
+
+        display: flex;
+        height: 80px;
+        background-color: rgba(104, 53, 153, 0.85);
+        justify-content: right;
+        padding-right: 30px;
+        width: 100%;
+        margin: 0px;
+
+     
+
+
+
+
+
+    }
+    .header input
+    {
+        width:250px;
+        height: 50px;
+        border-radius:30px;
+        outline: hidden;
+    
+
+    }
+    .header button
+    {
+        background-color: #2e353f;
+
+        display: flex;
+        align-items: center  ;
+        color: grey;
+        width: 30px;
+        height: 30px;
+        border-radius: 20px;
+        border: transparent;
+
+    }
+    .search-icon p
+    {
+      display: flex;
+
+    }
+    .search-icon
+    {
+        padding-top: 15px;
+    }
+
+
+
+
+ .trending-now {
+    display: flex;
+    gap: 20px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+    scroll-behavior: smooth;
+}
+    .trending-card img
+    {
+     border-radius: 20px;
+        width: 100%;
+        position: absolute;
+        height: 100%;
+        transform: scaley(1.3);
+    
+    }
+    .trending-card
+    {
+    width: 500px;
+             height: 300px;
+        overflow: hidden;
+        border-radius: 20px;
+
+    position: relative;
+    }
+    .movie
+    {
+    flex-shrink: 0;
+        height: 400px;
+    }
+  
+   .movie:focus{
+    outline: none;
+   }
+    .movie:focus .trending-card{
+           border:  3px solid cyan; 
+
+        }
+
+    
+    .btn
+    {
+        display: flex;
+
+    }
+
+ .right-btn
+ {
+     height: auto;
+     border-radius: 100%;
+     margin-right: 30px;
+ }
+    .left-btn{
+        height: auto;
+        border-radius: 100%;
+    }
+    .btn button
+    {
+        width: 40px;
+        height: 40px;
+        background:rebeccapurple ;
+        color: white;
+    
+    }
+
+
+.trending-now-text p{
+    display: flex;
+
+      gap:50px;
+    color: white;
+    height: auto;
+    margin-bottom: 0%;
+    width: 190px;
+    margin-top: 25px;
+}
+    .trending-now-text
+    {
+margin-top: 30px;
+         display: flex;
+        margin-bottom:20px;
+        font-size: 20px;
+
+
+
+    }
+    .trending-now-title
+    {
+        color: white;
+    
+    
+    }
+    
+    .trending-now-date
+    {
+        color: white;
+    }
+    .trending-now-title h6
+    {
+
+        text-align: center;
+        font-size: 30px;
+        margin:10px;
+
+    }
+    .trending-now-date h6
+    {
+        text-align: center;
+        margin-top: 5px;
+        font-size: 25px;
+
+    }
+    .movie h6
+    {
+        overflow-wrap: break-word;
+
+    }
+
+    .tv-trending
+    {
+        display: flex;
+    }
+
+    .monthly-hits-text
+    {
+        color: white;
+    width: 200px;
+
+    }
+    .monthly-hits{
+        display: flex;
+        column-gap :20px;
+        overflow-x: hidden;
+        overflow-y:hidden ;
+        scroll-behavior: smooth;
+
+
+    }
+
+       .tv{
+       flex-shrink: 0;
+           gap:0px;
+
+
+    }
+    .tv:focus{
+        outline: none;
+    }
+    .tv:focus .monthly-hits-card{
+        border: 3px cyan solid;
+    }
+         .monthly-hits-card{
+        width: 500px;
+             height: 300px;
+        overflow: hidden;
+        border-radius: 20px;
+
+             position: relative;
+
+    }
+
+    .monthly-hits-card img
+    {
+        border-radius: 20px;
+        width: 100%;
+        position: absolute;
+
+        transform: scaley(1.3);
+        height: 100%;
+
+
+
+    }
+    .monthly-hits-title
+    {
+
+        color: white;
+        text-align: center;
+        font-size: 40px;
+    }
+    .monthly-hits-title h6
+    {
+        margin: 20px;
+    
+        text-align: center;
+    }
+    .monthly-hits-date
+    {
+
+        color: white;
+        margin: 0px;
+        text-align: center;
+        font-size: 30px;
+
+    }
+    .monthly-hits-date h6
+    {
+        margin: 10px;
+    }
+
+
+    .btn
+    {
+        margin:0%;
+    }
+    .left-btn-m
+    {
+        border-radius: 100%;
+    }
+  .right-btn-m
+  {
+      border-radius: 100%;
+  }
+
+    a{
+      color: white;
+        text-decoration: none;
+    margin-top: 25px;
+        width: 90px;
+        margin-right: 10px;
+    }
+    .section1{
+        padding: 20px;
+    }
+
+
+
+       
+        @media (max-width: 800px) {
+            body {
+                padding: 25px;
+            }
+
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .card {
+                height: 150px;
+            }
+        }
+        .header .atlantic-btn {
+    width: auto;
+    height: 50px;
+    padding: 0 25px;
+    border-radius: 30px;
+    background-color: #2e353f;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+.header .atlantic-btn:focus {
+    outline: 3px solid cyan;
+}
+    </style>
+</head>
+
+<body>
+
+
+
+
+
+
+
+    <div class="header">
+    <div class="name">
+        <div class="peak"><p>peak</p></div>
+        <div class="cinema">cinema</div>
+        <div class="com">.com</div>
+    </div>
+
+    <a href="tvshow.html">tv shows</a>
+    <div class="home"><a href="search.html">home</a></div>
+
+    <div class="search-bar">
+        <button id="atlantic-btn" class="atlantic-btn" type="button">continue watching</button>
+    </div>
+</div>
+
+
+<section class="section1">
+    <div class="trending-now-text">
+        <p>Trending movies🔥</p>
+        
+    </div>
+    <div class="trending-now" id="movie-row"></div>
+    
+
+
+
+
+
+    <div class="tv-trending">
+
+           <div class="monthly-hits-text">
+        <p>trending shows🔥</p></div>
+    
+
+    </div>
+    <div class="monthly-hits" id="tv-row"></div>
+
+
+<script>
+const API_KEY = "740f2cfce22e7d55b58d28212e9f6ecc";
+
+const movieRow = document.getElementById("movie-row");
+const tvRow = document.getElementById("tv-row");
+
+function year(d) {
+    return d ? d.substring(0, 4) : "Unknown";
+}
+function openAtlantic(title) {
+    const url = title? "https://atlantic.st/search?q=" +encodeURIComponent(title).replace(/%20/g, "+").replace(/%3A/gi, ":"): "https://atlantic.st/history";
+
+    try {
+        const appControl = new tizen.ApplicationControl(
+            "http://tizen.org/appcontrol/operation/view", url);
+        tizen.application.launchAppControl(appControl, null,
+            function () {},
+            function () { window.location.href = url; }
+        ); 
+    } catch (e) {
+        window.location.href = url;
+    }
+}
+
+const atlanticBtn = document.getElementById("atlantic-btn");
+atlanticBtn.addEventListener("click", function () {
+    openAtlantic();
+});
+
+
+// fetch with timeout + automatic retries
+function fetchJSON(url, tries) {
+    tries = tries || 5;
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 8000);
+
+    return fetch(url, { signal: controller.signal })
+        .then(r => {
+            clearTimeout(timer);
+            if (!r.ok) throw new Error("HTTP " + r.status);
+            return r.json();
+        })
+        .catch(err => {
+            clearTimeout(timer);
+            if (tries <= 1) throw err;
+            // wait a bit longer after each failure: 1s, 2s, 3s...
+            const wait = (6 - tries) * 1000;
+            return new Promise(res => setTimeout(res, wait))
+                .then(() => fetchJSON(url, tries - 1));
+        });
+}
+
+function renderRow(rowEl, baseUrl, buildCard, pages) {
+    pages = pages || 50;   // 3 pages = up to 60 items
+    rowEl.innerHTML = '<p style="color:white;padding:20px">Loading...</p>';
+
+    const requests = [];
+    for (let p = 1; p <= pages; p++) {
+        requests.push(
+            fetchJSON(baseUrl + "&page=" + p).catch(() => ({ results: [] }))
+        );
+    }
+
+    return Promise.all(requests).then(all => {
+        const seen = {};
+        const items = Array.prototype.concat
+            .apply([], all.map(d => d.results || []))
+            .filter(item => {
+                if (!item.poster_path || seen[item.id]) return false;
+                seen[item.id] = true;   // remove duplicates
+                return true;
+            });
+
+        if (!items.length) throw new Error("empty");
+        rowEl.innerHTML = items.map(buildCard).join("");
+    }).catch(() => {
+        rowEl.innerHTML =
+            '<p style="color:white;padding:20px">Could not load. Check your internet connection.</p>';
+    });
+}
+
+function movieCard(movie) {
+    return `
+        <div class="movie" tabindex="0">
+            <div class="trending-card">
+                <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" height="150" width="250">
+            </div>
+            <div class="trending-now-title"><h6>${movie.title}</h6></div>
+            <div class="trending-now-date"><h6>${year(movie.release_date)}</h6></div>
+        </div>`;
+}
+
+function tvCard(tv) {
+    return `
+        <div class="tv" tabindex="0">
+            <div class="monthly-hits-card">
+                <img src="https://image.tmdb.org/t/p/w500${tv.poster_path}" height="150" width="250">
+            </div>
+            <div class="monthly-hits-title"><h6>${tv.original_name}</h6></div>
+            <div class="monthly-hits-date"><h6>${year(tv.first_air_date)}</h6></div>
+        </div>`;
+    }
+
+function loadAll() {
+    return Promise.all([
+        renderRow(movieRow, `https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}`, movieCard),
+        renderRow(tvRow, `https://api.themoviedb.org/3/tv/popular?api_key=${API_KEY}`, tvCard)
+    ]).then(() => {
+        const first = document.querySelector(".movie, .tv");
+        if (first) first.focus();
+    });
+}
+
+loadAll();
+
+// if the TV connects to the internet after the app opened, reload the rows
+window.addEventListener("online", function () {
+    if (!document.querySelector(".movie, .tv")) loadAll();
+});
+
+// Remote control key codes (event.key is unreliable on older Tizen)
+const KEY = { LEFT: 37, UP: 38, RIGHT: 39, DOWN: 40, ENTER: 13, BACK: 10009 };
+
+document.addEventListener("keydown", function (event) {
+    const code = event.keyCode;
+    const active = document.activeElement;
+
+    // Back key: exit the app
+    if (code === KEY.BACK) {
+        try { tizen.application.getCurrentApplication().exit(); } catch (e) {}
+        return;
+    }
+
+    // ---------- Atlantic button ----------
+    if (active === atlanticBtn) {
+        if (code === KEY.DOWN) {
+            const first = movieRow.querySelector(".movie");
+            if (first) { event.preventDefault(); first.focus(); }
+        }
+        return;   // Enter is handled by the click listener
+    }
+
+    // ---------- Cards ----------
+    const rows = [movieRow, tvRow];
+    const card = active && active.closest ? active.closest(".movie, .tv") : null;
+
+    // nothing focused yet: any arrow key focuses the first card
+    if (!card) {
+        if ([KEY.LEFT, KEY.UP, KEY.RIGHT, KEY.DOWN].includes(code)) {
+            const first = document.querySelector(".movie, .tv");
+            if (first) { event.preventDefault(); first.focus(); }
+        }
+        return;
+    }
+
+    const row = card.parentElement;
+    const rowIndex = rows.indexOf(row);
+    const cards = Array.from(row.children);
+    const index = cards.indexOf(card);
+    let target = null;
+
+    switch (code) {
+        case KEY.RIGHT:
+            target = cards[index + 1];
+            break;
+        case KEY.LEFT:
+            target = cards[index - 1];
+            break;
+        case KEY.DOWN: {
+            const nextRow = rows[rowIndex + 1];
+            if (nextRow && nextRow.children.length) {
+                target = nextRow.children[Math.min(index, nextRow.children.length - 1)];
+            }
+            break;
+        }
+        case KEY.UP: {
+            const prevRow = rows[rowIndex - 1];
+            if (prevRow && prevRow.children.length) {
+                target = prevRow.children[Math.min(index, prevRow.children.length - 1)];
+            } else {
+                target = atlanticBtn;   // top row: go up to the Atlantic button
+                window.scrollTo(0, 0);
+            }
+            break;
+        }
+        case KEY.ENTER:
+            event.preventDefault();
+            openAtlantic(card.querySelector("h6").textContent.trim());
+            return;
+        default:
+            return;
+    }
+
+    if (target) {
+        event.preventDefault();
+        target.focus();
+        if (target !== atlanticBtn) {
+            target.scrollIntoView({ block: "nearest", inline: "center" });
+        }
+    }
+});
+</script>
+
+
+
+
+
+    
+
+
+    
+
+  
+    
+
+
+
+
+    <br>
+
+
+    <br>
+</section>
+
+
+<!-- <script>
+
+const movieRow = document.getElementById("movie-row");
+
+document.getElementById("left-btn").onclick = () => {
+        clearInterval(autoScroll);
+    movieRow.scrollBy({
+        left: -400,
+        behavior: "smooth"
+    });
+};
+
+document.getElementById("right-btn").onclick = () => {
+        clearInterval(autoScroll);
+    movieRow.scrollBy({
+        left: 400,
+        behavior: "smooth"
+    });
+};/**
+ * Created by vinay on 20-07-2026.
+ */
+
+
+const step = 270;       // Distance to move
+const duration = 1000;  // Scroll duration in milliseconds (2 seconds)
+
+function smoothScrollBy(element, distance, duration) {
+    const start = element.scrollLeft;
+    const startTime = performance.now();
+
+    function animate(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+
+        // Ease in-out
+        const ease = progress < 0.5
+            ? 2 * progress * progress
+            : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+
+        element.scrollLeft = start + distance * ease;
+
+        if (progress < 1) {
+            requestAnimationFrame(animate);
+        }
+    }
+
+    requestAnimationFrame(animate);
+}
+
+
+const autoScroll = setInterval(() => {
+    if (movieRow.scrollLeft + movieRow.clientWidth >= movieRow.scrollWidth - 5) {
+        movieRow.scrollTo({
+            left: 0,
+            behavior: "instant"
+        });
+    } else {
+        smoothScrollBy(movieRow, step, duration);
+    }
+}, 2500); // Wait 5 seconds before the next scroll
+
+
+
+
+
+
+
+
+
+    const movieRowm = document.getElementById("movie-row-m");
+
+document.getElementById("left-btn-m").onclick = () => {
+    clearInterval(autoScrollw);
+    movieRowm.scrollBy({
+        left: -400,
+        behavior: "smooth"
+    });
+
+
+};
+
+document.getElementById("right-btn-m").onclick = () => {
+    clearInterval(autoScrollw);
+    movieRowm.scrollBy({
+        left: 400,
+        behavior: "smooth"
+    });
+};
+
+
+
+
+
+
+
+function smoothScrollBy(element, distance, duration) {
+    const start = element.scrollLeft;
+    const startTime = performance.now();
+
+    function animate(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+
+        // Ease in-out
+        const ease = progress < 0.5
+            ? 2 * progress * progress
+            : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+
+        element.scrollLeft = start + distance * ease;
+
+        if (progress < 1) {
+            requestAnimationFrame(animate);
+        }
+    }
+
+    requestAnimationFrame(animate);
+}
+
+
+const autoScrollw = setInterval(() => {
+    if (movieRowm.scrollLeft + movieRowm.clientWidth >= movieRowm.scrollWidth - 5) {
+        movieRowm.scrollTo({
+            left: 0,
+            behavior: "instant"
+        });
+    } else {
+        smoothScrollBy(movieRowm, step, duration);
+    }
+}, 2500);
+</script> -->
+
+
+
+
+</body>
+</html>
